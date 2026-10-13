@@ -1,0 +1,128 @@
+{
+  "reviewedOn": "2026-10-13",
+  "sources": [
+    {
+      "file": "week_1/W01-JS-Fundamentals-Review.md",
+      "sha256": "ff4e353b74b14d83e329154e57528c2b9c918e2f9eed619683ddade41f35fff0",
+      "units": [
+        "js",
+        "values"
+      ]
+    },
+    {
+      "file": "week_1/W01-Lab-Condition-Loop.md",
+      "sha256": "af54662f20b73f569937e95e207630a94450a7640af2bf40c56cf32ab143432c",
+      "units": [
+        "js"
+      ]
+    },
+    {
+      "file": "week_1/INT151_G2_20260805.docx",
+      "sha256": "2ed306523709f935a4d1a71d1395fc96c0efe1f5ec8ead7833217f18375ac0be",
+      "units": [
+        "js"
+      ]
+    },
+    {
+      "file": "week3/W03-JS-Review-Continued.md",
+      "sha256": "bed9291831013137b1efc6221ee423695c9071717574e2eee11789a24f64bf0a",
+      "units": [
+        "values",
+        "forms"
+      ]
+    },
+    {
+      "file": "week3/INT151_G2_20260819.docx",
+      "sha256": "f1301af1d50b3fbb0cea39cb51bf519283dac6d2142c5208d8144fc1ad304cf4",
+      "units": [
+        "values"
+      ]
+    },
+    {
+      "file": "week4/W04-Basic-Web-Architecture-and-DOM.md",
+      "sha256": "5926539305cec46807d841c379a0da5f6afb97ba02bf937bd738017fbdd48023",
+      "units": [
+        "dom",
+        "manipulation"
+      ]
+    },
+    {
+      "file": "week4/INT151_G2_20260826.docx",
+      "sha256": "7317d36fa8d33a6b9ce3e73e7d7dd6e8bd77e9738798a2deeab875248da1e6fa",
+      "units": [
+        "dom"
+      ]
+    },
+    {
+      "file": "notion/05 INT151 W05 - DOM Traversing, Selecting & Manipulating.md",
+      "sha256": "e219acf3c6fe98afae45922942889075bf973bdba0114c9af70b291007a65647",
+      "units": [
+        "manipulation"
+      ]
+    },
+    {
+      "file": "week5/INT151_G2_20260902.docx",
+      "sha256": "a420c2dc7f233ada03705ca1f89ff382bb90e75a3f321ce55183aaed5e3f4328",
+      "units": [
+        "manipulation"
+      ]
+    },
+    {
+      "file": "week6/W06-Introduction-to-Events.md",
+      "sha256": "cf7e07fcdeac7df7749a5f4661ce3133f09bcfe0cac92de95059628efceead73",
+      "units": [
+        "events"
+      ]
+    },
+    {
+      "file": "week6/INT151_G2_20260916.docx",
+      "sha256": "42cf360649f404aa248e251b70c2762dfa538bff6a841c8bcaf246d8a6b87579",
+      "units": [
+        "events"
+      ]
+    },
+    {
+      "file": "week7/W07-Event-Object-and-Event-Types.md",
+      "sha256": "00f873bbc10fc5d6fd48d84f916512bed74f89738d7d85f71bff9249d8e27285",
+      "units": [
+        "event-object",
+        "forms"
+      ]
+    },
+    {
+      "file": "week7/INT151_G2_20260923.docx",
+      "sha256": "e45aa22e1168b28226ede491c3a2368fe12e46ee1d2a43fc1b9a5128130b919c",
+      "units": [
+        "event-object"
+      ]
+    },
+    {
+      "file": "week8/INT151_G2_20260930.docx",
+      "sha256": "524913111d8c77502c7745c0184654b4af3eefcedd19c490d78248d51aafa1bc",
+      "units": [
+        "forms"
+      ]
+    },
+    {
+      "file": "week9/INT151_G2_20261007.docx",
+      "sha256": "40464bd3c580c52cfc3043f26e4d0d08b20fda76ff106b2002a3b91344b857a7",
+      "units": [
+        "storage"
+      ]
+    },
+    {
+      "file": "Cookie.js",
+      "sha256": "9e49d66009dff3e067c5a4000c950511d86763e3181b7715268b750fa6ddd7e1",
+      "units": [
+        "storage"
+      ]
+    },
+    {
+      "file": "t.md",
+      "sha256": "ffee08597865119187d581567a50c934afbad18d0763789282f46dbaf3a7a7c3",
+      "units": [
+        "storage"
+      ]
+    }
+  ]
+}
