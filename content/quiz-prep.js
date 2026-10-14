@@ -1,4 +1,4 @@
-import {codeQuestions} from './code-questions.js';
+import {codeQuestions} from './code-questions.js?v=20261014-code-first';
 const source='week9/INT151_G2_20261007.docx · แนวฝึกเรียบเรียงจากคาบ 7 ต.ค. 2569';
 const concept=(id,title,body,prediction)=>({id,title,body,prediction,source,type:'concept',mode:'js'});
 const prediction=(question,choices,answer,explanation)=>({question,choices,answer,explanation});

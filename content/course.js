@@ -1,4 +1,5 @@
-import {quizPrep} from './quiz-prep.js';
+import {withTeaching} from './teaching.js?v=20261014-code-first';
+import {quizPrep} from './quiz-prep.js?v=20261014-code-first';
 const p=(question,choices,answer,explanation)=>({question,choices,answer,explanation});
 const C=(id,title,body,extra={})=>({id,title,body,type:'concept',...extra});
 const E=(id,title,body,code,extra={})=>({id,title,body,type:'experiment',mode:'js',code,...extra});
@@ -66,4 +67,4 @@ export const units=[
     X('save','เขียนเอง · เก็บ object แล้วคืนค่าที่อ่านกลับ','<p>เขียน <code>savePrefs(prefs)</code> เก็บลง key <code>prefs</code> ด้วย JSON แล้วอ่านกลับเป็น object และ return ค่านั้น</p>','savePrefs','function savePrefs(prefs) {\n  // setItem → getItem → JSON.parse → return\n}',"function savePrefs(prefs) {\n  localStorage.setItem('prefs', JSON.stringify(prefs));\n  return JSON.parse(localStorage.getItem('prefs'));\n}",[{...test('theme',[{theme:'dark'}],{theme:'dark'}),storageExpected:{prefs:'{"theme":"dark"}'}},test('มีหลาย property',[{theme:'light',fontSize:18}],{theme:'light',fontSize:18}),test('object ว่าง',[{}],{})],['อย่าส่ง object เข้า setItem โดยตรง เพราะจะถูกแปลงเป็นข้อความ [object Object]','ใช้ JSON.stringify ตอนเก็บและ JSON.parse ตอนอ่านกลับ'],{storage:true}),
     X('load','เขียนเอง · อ่าน JSON โดยมี fallback','<p>เขียน <code>readPrefs(raw)</code> รับ string จาก getItem หรือ null ถ้า null หรือ JSON ผิดรูปแบบให้คืน <code>{theme:"light"}</code> ถ้าถูกให้คืนค่าที่ parse ได้</p>','readPrefs','function readPrefs(raw) {\n  // ตรวจ null และ parse อย่างปลอดภัย\n}',"function readPrefs(raw) {\n  if (raw === null) return {theme:'light'};\n  try { return JSON.parse(raw); }\n  catch { return {theme:'light'}; }\n}",[test('ไม่มี key',[null],{theme:'light'}),test('ข้อมูลถูก',['{"theme":"dark"}'],{theme:'dark'}),test('ข้อมูลเก่าเสีย',['{broken'],{theme:'light'})],['จัดการ null ก่อน parse เพื่อแยกไม่มี key จากค่า JSON null','มี default object ในทั้งกรณีไม่มี key และ catch ของ JSON.parse']),
   ]},
-].map(unit=>({...unit,activities:unit.activities.map(a=>({...a,source:a.source||unit.sources[0],mode:a.mode||'js'}))}));
+].map(withTeaching).map(unit=>({...unit,activities:unit.activities.map(a=>({...a,source:a.source||unit.sources[0],mode:a.mode||'js'}))}));

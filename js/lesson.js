@@ -1,5 +1,5 @@
-import {createMultiChoice} from './multi-choice.js';
-import {units} from '../content/course.js';
+import {createMultiChoice} from './multi-choice.js?v=20261014-code-first';
+import {units} from '../content/course.js?v=20261014-code-first';
 import {createStore} from './store.js';
 import {h,labels,doneLabels} from './dom.js';
 import {createPanel} from './panel.js';
@@ -31,9 +31,19 @@ else{
   const mark=()=>{store.markDone(unit.id,activity.id);update();};
   const article=h('article',{id:activity.id,class:'activity'},h('div',{class:'activity-meta'},h('span',{class:`kind kind-${activity.type}`},labels[activity.type]),h('span',{class:'muted'},`กิจกรรม ${index+1} / ${unit.activities.length}`),h('span',{id:'activity-state',class:'activity-state'})),h('h1',{tabindex:'-1'},activity.title));
   if(activity.teacher)article.append(h('aside',{class:'teacher-note'},h('strong',{},'ประเด็นจากคาบเรียน'),h('p',{},activity.teacher),h('small',{},'สรุปใจความจากโน้ต / transcript')));
-  article.append(h('div',{class:'prose',html:activity.body}));
+  if(activity.teaching){
+   const guide=activity.teaching;
+   article.append(h('p',{class:'learning-prompt'},'เริ่มจากโค้ด → เลือกทุกข้อที่ถูก → ไล่ค่าทีละบรรทัด → ลองเปลี่ยนโค้ด'));
+   article.append(createMultiChoice([guide.question]));
+   article.append(h('details',{class:'worked-trace'},h('summary',{},'ตอบแล้วค่อยเปิด · ไล่โค้ดทีละขั้น'),
+    h('div',{class:'prose'},h('table',{},h('thead',{},h('tr',{},['จุดที่ไล่','ค่า / สถานะ','เพราะอะไร'].map(text=>h('th',{},text)))),h('tbody',{},guide.steps.map(row=>h('tr',{},row.map(text=>h('td',{},text)))))),h('p',{},h('strong',{},'หลักที่ใช้ตัดสิน: '),guide.takeaway))));
+   article.append(h('details',{class:'worked-trace'},h('summary',{},'สรุปหลักการและตัวอย่างเพิ่มเติม'),h('div',{class:'prose',html:activity.body})));
+   article.append(h('aside',{class:'teacher-note'},h('strong',{},'พิสูจน์คำตอบด้วยการทดลอง'),h('p',{},guide.change),h('p',{},guide.predict),h('a',{href:`#${guide.experiment}`,class:'button'},'ไปลองรันและเปลี่ยนโค้ด →')));
+  }else article.append(h('div',{class:'prose',html:activity.body}));
+  if(activity.experimentGuide)article.append(h('aside',{class:'teacher-note'},h('strong',{},'ก่อนกด Run'),h('p',{},activity.experimentGuide.predict),h('strong',{},'เปลี่ยนทีละจุดแล้ว Run อีกครั้ง'),h('p',{},activity.experimentGuide.change),h('p',{},'เทียบผลกับคำตอบที่ทาย ถ้าต่างกัน ให้หาบรรทัดแรกที่ค่าไม่ตรงกับที่คิด แล้วอธิบายสาเหตุก่อนแก้โค้ด')));
+
   if(activity.multiChoice)article.append(createMultiChoice(activity.multiChoice));
-  if(activity.prediction){
+  if(activity.prediction&&!activity.teaching){
    const p=activity.prediction,feedback=h('p',{class:'prediction-feedback',role:'status'});
    article.append(h('fieldset',{class:'prediction'},h('legend',{},'ก่อนลอง · ทายผล'),h('p',{},p.question),h('div',{class:'prediction-options'},p.choices.map((choice,i)=>h('label',{},h('input',{type:'radio',name:'prediction',onchange:()=>{feedback.textContent=`${i===p.answer?'✓ ทายถูก':'ลองทบทวน · คำตอบคือ '+p.choices[p.answer]} — ${p.explanation}`;}}),choice))),feedback,h('small',{class:'muted'},'คำถามฝึกคิด ไม่รวมความคืบหน้าของกิจกรรม')));
   }
