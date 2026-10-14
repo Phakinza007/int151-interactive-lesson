@@ -1,6 +1,6 @@
 # INT151 · Frontend Lab
 
-A standalone Thai learning website based on the available INT151 notes and class transcripts. Eight topic modules contain 46 activities, 17 coding exercises, predictions, progressive hints, source references, code completion and browser-local progress.
+A standalone Thai learning website based on the available INT151 notes and class transcripts. Eight topic modules contain 50 activities, 17 coding exercises, predictions, progressive hints, source references, code completion and browser-local progress.
 
 ## Open locally
 
@@ -22,7 +22,7 @@ The app is buildless and deployable as static files. It needs HTTP (ES modules a
 | W6 | Event listeners, capture/bubble and removal | 5 |
 | W7 | Event object, delegation and input | 5 |
 | W8 | Form submission, preventDefault and input validation | 5 |
-| W9 | Cookies/Web Storage selection, JSON preferences and fallback | 11 |
+| W9 | Cookies/Web Storage selection, JSON preferences and fallback | 15 |
 
 Labels follow the source topic weeks, not a claim of consecutive sessions. Form/email exercises are teaching adaptations; the email pattern intentionally checks the stated exercise rules rather than every valid email format. Promise/Fetch units are not invented from future items in the course outline.
 
@@ -60,4 +60,4 @@ Static hosting needs index.html, lesson.html, css/, js/, engine/, content/ and v
 
 The Storage module starts with quiz preparation for 14 October 2026, based on the 7 October transcript: six activities with a comparison, cookie lifecycle/attributes, trace example, cookie parsing exercise and twelve code-based multiple-answer questions with exact-set scoring and explanations for every option. These are study predictions, not actual exam questions.
 
-Each of the eight modules includes a code-first multiple-answer warm-up, a worked state trace revealed on request, and a link to an experiment with a specific change to test. Learners predict before running, explain every option, then apply the idea in the existing coding exercises.
+Each module teaches concepts first, shows an explained code trace, then offers optional multiple-answer practice. Storage begins with four beginner lessons (what storage is, key/value and Web Storage, cookie basics, and reading a cookie string). The twelve-question practice set follows the lessons and exercises.

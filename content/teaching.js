@@ -1,4 +1,4 @@
-import {codeQuestions} from './code-questions.js?v=20261014-code-first';
+import {codeQuestions} from './code-questions.js?v=20261014-teach-first';
 const option=(text,correct,explanation)=>({text,correct,explanation});
 const q=(id,title,assumption,code,options)=>({id,title,assumption,code,options,prompt:'อ่านโค้ดก่อน แล้วเลือกทุกตัวเลือกที่ถูก อย่าเพิ่งเปิดตารางไล่ค่า'});
 const guides={
