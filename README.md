@@ -58,4 +58,4 @@ npm run build:parser
 
 Static hosting needs index.html, lesson.html, css/, js/, engine/, content/ and vendor/. Do not upload node_modules or private course transcripts. GitHub Pages deployment publishes only the static app via the `Deploy Pages` workflow. The repository excludes node_modules and raw transcripts.
 
-The Storage module starts with quiz preparation for 14 October 2026, based on the 7 October transcript: six activities with a comparison, cookie lifecycle/attributes, trace example, cookie parsing exercise and twelve revealable practice questions. These are study predictions, not actual exam questions.
+The Storage module starts with quiz preparation for 14 October 2026, based on the 7 October transcript: six activities with a comparison, cookie lifecycle/attributes, trace example, cookie parsing exercise and twelve code-based multiple-answer questions with exact-set scoring and explanations for every option. These are study predictions, not actual exam questions.

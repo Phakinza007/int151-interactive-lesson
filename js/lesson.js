@@ -1,3 +1,4 @@
+import {createMultiChoice} from './multi-choice.js';
 import {units} from '../content/course.js';
 import {createStore} from './store.js';
 import {h,labels,doneLabels} from './dom.js';
@@ -31,6 +32,7 @@ else{
   const article=h('article',{id:activity.id,class:'activity'},h('div',{class:'activity-meta'},h('span',{class:`kind kind-${activity.type}`},labels[activity.type]),h('span',{class:'muted'},`กิจกรรม ${index+1} / ${unit.activities.length}`),h('span',{id:'activity-state',class:'activity-state'})),h('h1',{tabindex:'-1'},activity.title));
   if(activity.teacher)article.append(h('aside',{class:'teacher-note'},h('strong',{},'ประเด็นจากคาบเรียน'),h('p',{},activity.teacher),h('small',{},'สรุปใจความจากโน้ต / transcript')));
   article.append(h('div',{class:'prose',html:activity.body}));
+  if(activity.multiChoice)article.append(createMultiChoice(activity.multiChoice));
   if(activity.prediction){
    const p=activity.prediction,feedback=h('p',{class:'prediction-feedback',role:'status'});
    article.append(h('fieldset',{class:'prediction'},h('legend',{},'ก่อนลอง · ทายผล'),h('p',{},p.question),h('div',{class:'prediction-options'},p.choices.map((choice,i)=>h('label',{},h('input',{type:'radio',name:'prediction',onchange:()=>{feedback.textContent=`${i===p.answer?'✓ ทายถูก':'ลองทบทวน · คำตอบคือ '+p.choices[p.answer]} — ${p.explanation}`;}}),choice))),feedback,h('small',{class:'muted'},'คำถามฝึกคิด ไม่รวมความคืบหน้าของกิจกรรม')));
